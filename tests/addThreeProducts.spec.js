@@ -36,7 +36,9 @@ test("Add multiple products from different pages to cart", async ({ page }) => {
       quantity: 3,
       pageNumber: 4,
     },
-    { name: "Acer Nitro 5", quantity: 1, pageNumber: 2 },
+    { name: "Acer Nitro 5", 
+      quantity: 1, 
+      pageNumber: 2 },
   ];
 
   for (const product of products) {
