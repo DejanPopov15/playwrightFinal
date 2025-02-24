@@ -45,16 +45,14 @@ test("Add multiple products from different pages to cart", async ({ page }) => {
       if (product.name === productToAdd.name) {
         console.log(`Adding product to cart: ${product.name}`);
 
-        const productCardLocator = page
-          .locator(`h1:has-text("${product.name}")`)
-          .locator("xpath=..");
+        const productCardLocator = page.locator(productToAdd.addToCartButton);
         await expect(productCardLocator).toBeVisible();
 
         const addToCartButton =
           productCardLocator.locator("button.add-to-cart");
         await expect(addToCartButton).toBeVisible();
 
-        await addToCartButton.click();
+        await productToAdd.addToCartButton.click();
       }
     }
   }

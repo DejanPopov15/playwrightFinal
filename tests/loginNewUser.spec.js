@@ -15,3 +15,13 @@ test("Login as existing user", async ({ page }) => {
     "https://automaticityacademy.ngrok.app/dashboard"
   );
 });
+
+import { webkit } from "@playwright/test";
+
+test("WebKit test", async () => {
+  const browser = await webkit.launch(); // Pokreće WebKit
+  const page = await browser.newPage();
+  await page.goto("https://example.com");
+  await page.screenshot({ path: "example.png" }); // Napravi screenshot
+  await browser.close();
+});
